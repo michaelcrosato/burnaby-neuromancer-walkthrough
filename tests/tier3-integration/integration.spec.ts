@@ -12,7 +12,8 @@ test.describe('Tier 3 Integration Tests (Cross-Feature Combinations)', () => {
     
     // Wait for the WebGPU context to be fully initialized and ready
     await page.waitForFunction(() => {
-      return (window as unknown as CustomWindow).__webgpu_test_hook?.isContextReady() === true;
+      return (window as unknown as CustomWindow).__webgpu_test_hook?.isContextReady() === true &&
+             typeof (window as any).generateBurnabyTerrain === 'function';
     }, { timeout: 5000 });
   });
 

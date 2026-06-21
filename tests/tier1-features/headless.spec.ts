@@ -19,7 +19,7 @@ test.describe('Headless Verification & Reporting Feature (F6)', () => {
     }, { timeout: 5000 });
     
     const url = page.url();
-    expect(url).toContain('http://localhost:5173');
+    expect(url).toContain('http://localhost:3000');
   });
 
   test('F6.2: Audio permission is successfully granted headlessly', async ({ page }) => {
